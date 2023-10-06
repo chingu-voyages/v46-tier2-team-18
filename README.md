@@ -1,4 +1,4 @@
-# Chingu Voyage 46 | Team 18 - Recipe App
+# Chingu Voyage 46 | Team 18 - Recipe App 🌈
 
 ## Github Workflow
 
