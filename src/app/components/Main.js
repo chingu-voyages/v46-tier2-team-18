@@ -1,3 +1,8 @@
+import Searchbar from "./Searchbar";
 export default function Main() {
-  return <div>Main</div>;
+  return (
+    <div>
+      <Searchbar />
+    </div>
+  );
 }
