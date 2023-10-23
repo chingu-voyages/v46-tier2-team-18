@@ -11,7 +11,9 @@
 3. Checkout develop `git checkout develop` (go to the develop branch) and run `git pull`.
 4. Create a new branch like this: `git checkout -b issue-<issue-number>/<branch-name>.` Example: `git checkout -b issue-14/update-readme`.
 5. Do your work. Stage, commit, and push your changes.
-6. Create a pull request from your branch back into develop. Write `Closes #<issue-number>` in your pull request’s comments. Example: `Closes #14`.
+6. Create a pull request from your branch back into develop. Write `Closes #<issue-number>` in your pull request’s comments. Example:
+   - `Closes #14`
+   - Refer to these writing PR Guides [Github - How to write the perfect PR](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/) and [Github - Writing a good PR](https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_pr) to write descriptive PRs.
 7. Send a link to your PR to our Discord chat and notify everyone (@Voyager).
 8. Merge the pull request if you got an approval.
 9. Notify everyone in out team that you have merged the PR so we update the develop branch locally.
