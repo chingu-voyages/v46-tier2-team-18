@@ -1,5 +1,7 @@
 export default function Header() {
   return (
-    <div>Header</div>
-  )
+    <div className="bg-gray-200 flex justify-center">
+      <a className="btn btn-ghost normal-case text-xl">Peppa Plate</a>
+    </div>
+  );
 }
