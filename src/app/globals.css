@@ -1,5 +1,10 @@
 /* styles/globals.css */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "daisyui/dist/full.css";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'daisyui/dist/full.css';
+
+@font-face {
+  font-family: 'VeganStyle';
+  src: url('../../public/fonts/VeganStylePersonalUse-5Y58.ttf');
+}
