@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
-import { HiRefresh } from "react-icons/hi";
 
 export default function SearchBar() {
   const [searchRecipe, setSearchRecipe] = useState("");
