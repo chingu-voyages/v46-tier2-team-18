@@ -9,29 +9,56 @@ export default function Modal() {
     const hasModalBeenDisplayed = localStorage.getItem('modalDisplayed');
 
     if (!hasModalBeenDisplayed) {
-      const modal = document.getElementById('my_modal_2');
+      const modal = document.getElementById('my_modal_5');
       if (modal) {
         modal.showModal();
         setModalDisplayed(true);
 
         // Store in local storage to prevent further displays
-        localStorage.setItem('modalDisplayed', 'true');
+        // localStorage.setItem('modalDisplayed', 'true');
       }
     }
   }, []);
 
+  const date = new Date();
+  const hours = date.getHours();
+  let timeOfDay;
+
+  if (hours >= 5 && hours < 12) {
+    timeOfDay = 'Good morning!';
+  } else if (hours >= 12 && hours < 17) {
+    timeOfDay = 'Good afternoon!';
+  } else if (hours >= 17 && hours < 20) {
+    timeOfDay = 'Good evening!';
+  } else {
+    timeOfDay = 'Time for a late night snack?';
+  }
+
   return (
-    <dialog id="my_modal_2" className="modal">
-      <div className="modal-box">
-        <h3 className="font-bold text-lg text-center">Welcome !</h3>
-        <p className="py-4 text-center">
-          Supercharge your cooking experience by adding a pinch of excitement to
-          your plate.
-        </p>
+    <>
+      <div className="flex justify-center m-4">
+        <button
+          className="btn"
+          onClick={() => document.getElementById('my_modal_5').showModal()}
+        >
+          Click to Test Modal
+        </button>
       </div>
-      <form method="dialog" className="modal-backdrop">
-        <button>close</button>
-      </form>
-    </dialog>
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg text-center">{timeOfDay}</h3>
+          <p className="py-4 text-center">
+            Supercharge your cooking experience by adding a pinch of excitement
+            to your plate.
+          </p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Let's Cook !</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </>
   );
 }
