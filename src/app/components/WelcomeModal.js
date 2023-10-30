@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
-export default function Modal() {
+export default function WelcomeModal() {
   const [modalDisplayed, setModalDisplayed] = useState(false);
 
   useEffect(() => {
@@ -45,16 +45,18 @@ export default function Modal() {
         </button>
       </div>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
+        <div className="modal-box rounded bg-white p-6 shadow-lg">
           <h3 className="font-bold text-lg text-center">{timeOfDay}</h3>
-          <p className="py-4 text-center">
-            Supercharge your cooking experience by adding a pinch of excitement
-            to your plate.
+          <p className="py-4 text-center text-gray-700">
+            Welcome to our recipe hub! Type in an ingredient and discover a
+            universe of cooking possibilities at your fingertips.
           </p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Let's Cook !</button>
+              <button className="btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                Let's Cook !
+              </button>
             </form>
           </div>
         </div>
