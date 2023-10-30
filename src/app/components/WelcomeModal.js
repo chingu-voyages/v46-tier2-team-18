@@ -55,7 +55,7 @@ export default function WelcomeModal() {
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button className="btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-                Let's Cook !
+                Let&apos;s Cook !
               </button>
             </form>
           </div>
