@@ -1,8 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function SearchBar() {
   const [searchRecipe, setSearchRecipe] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup",
+        {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Host": "tasty.p.rapidapi.com",
+            "X-RapidAPI-Key": process.env.NEXT_PUBLIC_KEY,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("failed to fetch");
+      }
+      const result = await response.json();
+      console.log(result.results);
+    }
+
+    fetchData();
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
