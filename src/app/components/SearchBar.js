@@ -19,10 +19,10 @@ export default function SearchBar() {
   return (
     <div className="relative flex max-w-md gap-2 mx-auto my-20">
       <form
-        className="relative flex w-full border border-gray-300 rounded-full"
+        className="relative flex w-full border border-slate-300	shadow rounded-full"
         onSubmit={handleSubmit}
       >
-        <div className="relative top-0 left-0 flex items-center justify-center">
+        <div className="relative top-0 bg-white rounded-l-full left-0 flex items-center justify-center">
           <button
             className="flex items-center justify-center flex-shrink-0 w-10 h-10 p-2 text-black bg-white rounded-full cursor-pointer"
             onClick={() => handleReset()}
@@ -34,7 +34,7 @@ export default function SearchBar() {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-6 h-6 text-slate-400 "
               >
                 <path
                   strokeLinecap="round"
@@ -49,7 +49,7 @@ export default function SearchBar() {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-6 h-6 text-slate-300"
               >
                 <path
                   strokeLinecap="round"
@@ -64,7 +64,7 @@ export default function SearchBar() {
           value={searchRecipe}
           onChange={(e) => setSearchRecipe(e.target.value)}
           className="w-full pl-4 text-gray-800 rounded-r-full outline-none"
-          placeholder="Search for items..."
+          placeholder="Start typing to discover new flavors..."
         />
       </form>
     </div>

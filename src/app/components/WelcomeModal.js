@@ -1,15 +1,15 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 
 export default function WelcomeModal() {
   const [modalDisplayed, setModalDisplayed] = useState(false);
 
   useEffect(() => {
     // Check if the modal has already been displayed
-    const hasModalBeenDisplayed = localStorage.getItem('modalDisplayed');
+    const hasModalBeenDisplayed = localStorage.getItem("modalDisplayed");
 
     if (!hasModalBeenDisplayed) {
-      const modal = document.getElementById('my_modal_5');
+      const modal = document.getElementById("my_modal_5");
       if (modal) {
         modal.showModal();
         setModalDisplayed(true);
@@ -25,13 +25,13 @@ export default function WelcomeModal() {
   let timeOfDay;
 
   if (hours >= 5 && hours < 12) {
-    timeOfDay = 'Good morning!';
+    timeOfDay = "Good morning!";
   } else if (hours >= 12 && hours < 17) {
-    timeOfDay = 'Good afternoon!';
+    timeOfDay = "Good afternoon!";
   } else if (hours >= 17 && hours < 20) {
-    timeOfDay = 'Good evening!';
+    timeOfDay = "Good evening!";
   } else {
-    timeOfDay = 'Time for a late night snack?';
+    timeOfDay = "Time for a late night snack?";
   }
 
   return (
@@ -39,7 +39,7 @@ export default function WelcomeModal() {
       <div className="flex justify-center m-4">
         <button
           className="btn"
-          onClick={() => document.getElementById('my_modal_5').showModal()}
+          onClick={() => document.getElementById("my_modal_5").showModal()}
         >
           Click to Test Modal
         </button>
@@ -54,8 +54,8 @@ export default function WelcomeModal() {
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-                Let&apos;s Cook !
+              <button className="btn btn-accent  py-2 px-4 rounded rounded-lg">
+                Let&apos;s Cook!
               </button>
             </form>
           </div>
