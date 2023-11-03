@@ -1,6 +1,6 @@
-import SearchBar from './SearchBar';
-import Card from './Card';
-import WelcomeModal from './WelcomeModal';
+import SearchBar from "./SearchBar";
+import Card from "./Card";
+import WelcomeModal from "./WelcomeModal";
 
 export default function Main() {
   return (
@@ -8,7 +8,7 @@ export default function Main() {
       <WelcomeModal />
       <br />
       <SearchBar />
-      <div className="flex flex-wrap justify-center mb-12">
+      <div className=" flex flex-wrap justify-center mb-12">
         <Card />
         <Card />
         <Card />

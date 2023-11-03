@@ -15,7 +15,7 @@ export default function Card() {
           <h2 className="card-title">Spicy Hotpot</h2>
           <p>One sentence summary of the recipe</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-neutral-content hover:group">
+            <button className="btn  bg-amber-100 hover:group hover:bg-amber-200 hover:border-amber-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-2"
