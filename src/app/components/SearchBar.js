@@ -12,7 +12,7 @@ export default function SearchBar() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY,
+        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_TASTY_API_KEY,
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
       },
     };
