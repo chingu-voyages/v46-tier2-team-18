@@ -1,47 +1,9 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
 
-export default function SearchBar() {
-  const [searchRecipe, setSearchRecipe] = useState('');
-  const [data, setData] = useState([]);
-
-  const url =
-    'https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup';
-
-  useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_TASTY_API_KEY,
-        'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
-      },
-    };
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        setData(response.results);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
-
-  //Reset function to reset when typing
-  function handleReset() {
-    if (searchRecipe !== '') {
-      setSearchRecipe('');
-    } else {
-    }
-  }
-
+export default function SearchBar({ handleSubmit, handleReset, searchRecipe }) {
   return (
     <>
-      <div className="mt-5">
+      {/* <div className="mt-5">
         {data.length > 0 ? ( // Conditionally rendering based on data availability
           <div>
             {data.map(
@@ -49,32 +11,32 @@ export default function SearchBar() {
                 recipe,
                 index // index needs to be changed to id
               ) => (
-                <h1 key={index}>{recipe.display}</h1> // Assuming 'title' exists in your recipe object
+                <h1 key={index}>{recipe.name}</h1> // Assuming 'title' exists in your recipe object
               )
             )}
           </div>
         ) : (
           <p>No recipes found</p>
         )}
-      </div>
+      </div> */}
       <div className="relative flex max-w-md gap-2 mx-auto my-20">
         <form
           className="relative flex w-full border border-gray-300 rounded-full"
           onSubmit={handleSubmit}
         >
-          <div className="relative top-0 left-0 flex items-center justify-center">
+          <div className="relative top-0 left-0 flex items-center justify-center bg-white rounded-l-full">
             <button
               className="flex items-center justify-center flex-shrink-0 w-10 h-10 p-2 text-black bg-white rounded-full cursor-pointer"
               onClick={() => handleReset()}
             >
-              {searchRecipe !== '' ? (
+              {searchRecipe !== "" ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-6 h-6 text-gray-800"
                 >
                   <path
                     strokeLinecap="round"
@@ -89,7 +51,7 @@ export default function SearchBar() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-6 h-6 text-gray-300"
                 >
                   <path
                     strokeLinecap="round"
