@@ -1,6 +1,11 @@
 "use client";
 
-export default function SearchBar({ handleSubmit, handleReset, searchRecipe }) {
+export default function SearchBar({
+  handleSubmit,
+  handleReset,
+  searchRecipe,
+  setSearchRecipe,
+}) {
   return (
     <>
       {/* <div className="mt-5">
