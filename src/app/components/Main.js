@@ -9,6 +9,7 @@ export default function Main() {
   const [data, setData] = useState([]);
   const [dataToShow, setDataToShow] = useState([]);
   const [tag, setTag] = useState([]);
+  const [description, setDescription] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [paginationNumbers, setpaginationNumbers] = useState([]);
@@ -96,42 +97,32 @@ export default function Main() {
         searchRecipe={searchRecipe}
         setSearchRecipe={handleSsearch}
       />
-      {!isLoading &&
-        data &&
-        data.length > 0 &&
-        dataToShow.map((response, index) => {
-          const { tags, thumbnail_url, name } = response;
+      <div className="flex flex-wrap justify-center m-12">
+        {!isLoading &&
+          data &&
+          data.length > 0 &&
+          dataToShow.map((response, index) => {
+            const { tags, thumbnail_url, name, description } = response;
 
-          const _data = {
-            imageUrl: thumbnail_url,
-          };
-          return (
-            <div
-              key={response + index}
-              className="flex flex-wrap justify-center mb-12 "
-            >
+            return (
               <Card
+                key={index}
                 imageUrl={thumbnail_url}
-                title={tag[index]?.display_name}
-                tag={tag}
+                title={name}
+                tag={tags}
                 name={name}
+                description={description}
               />
-            </div>
-          );
-        })}
-
-      {dataToShow && dataToShow.length > 0 && (
-        <label>
-          Showing page {pageNumber} of {dataToShow.length - 1}{" "}
-        </label>
-      )}
+            );
+          })}
+      </div>
 
       <div style={{ display: "flex", gap: 5, justifyContent: "center" }}>
         {paginationNumbers?.map((item) => {
           return (
             <label
               key={item}
-              style={{ cursor: "pointer", marginTop: "20px" }}
+              style={{ cursor: "pointer", marginTop: "40px" }}
               onClick={() => handlePaginate(item)}
             >
               {item}
@@ -140,7 +131,11 @@ export default function Main() {
         })}
       </div>
 
-      {isLoading && <p>Loading....</p>}
+      {isLoading && (
+        <div className="flex justify-center">
+          <span className=" loading loading-ring loading-lg"></span>
+        </div>
+      )}
     </div>
   );
 }
