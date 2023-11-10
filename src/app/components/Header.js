@@ -2,23 +2,23 @@
 import { useEffect, useState } from "react";
 
 export default function Header() {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-  );
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.querySelector("html").setAttribute("data-theme", storedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-
-    document.querySelector("html").setAttribute("data-theme", localTheme);
+    document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
 
   const handleToggle = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    setTheme(e.target.checked ? "dark" : "light");
   };
   return (
     <div className="sticky top-0 z-10">
